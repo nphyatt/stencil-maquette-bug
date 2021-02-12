@@ -10,17 +10,19 @@
   </head>
   <body>
     <script type="module">
-      import { h, createProjector } from "https://unpkg.com/maquette@3.3.7/dist/index.js";
+      // cd into the maquette directory and run `python server.py` to serve the modified version
+      // maquette/dist/h.js lines 38-42 are the lines in question https://github.com/AFASSoftware/maquette/blob/master/src/h.ts#L77 in the source
+      import { h, createProjector } from 'http://localhost:4444/dist/index.js';
       document.addEventListener('DOMContentLoaded', function () {
         const domNode = document.body;
         const projector = createProjector();
         const test = {
           renderMaquette: function () {
-            return h("div", [
-              h("calcite-label", ["I am a text node and won't get properly relocated"]),
-              h("calcite-label", [h("span", ["I am a span and will get properly relocated"])]),
-            ])
-          }
+            return h('div', [
+              h('calcite-label', ["I am a text node and won't get properly relocated"]),
+              h('calcite-label', [h('span', ['I am a span and will get properly relocated'])]),
+            ]);
+          },
         };
         projector.append(domNode, test.renderMaquette);
         projector.scheduleRender();

@@ -26,7 +26,7 @@ export namespace Components {
         /**
           * is the wrapped element positioned inline with the label slotted text
          */
-        "layout": "inline" | "inline-space-between" | "default";
+        "layout": 'inline' | 'inline-space-between' | 'default';
         /**
           * specify the scale of the input, defaults to m
          */
@@ -82,7 +82,7 @@ declare namespace LocalJSX {
         /**
           * is the wrapped element positioned inline with the label slotted text
          */
-        "layout"?: "inline" | "inline-space-between" | "default";
+        "layout"?: 'inline' | 'inline-space-between' | 'default';
         "onCalciteLabelFocus"?: (event: CustomEvent<any>) => void;
         /**
           * specify the scale of the input, defaults to m
