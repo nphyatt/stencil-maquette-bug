@@ -36,9 +36,10 @@ export function h(selector, properties, children) {
   var text;
   var flattenedChildren;
   // Recognize a common special case where there is only a single text node
-  if (children && children.length === 1 && typeof children[0] === 'string') {
-    text = children[0];
-  } else if (children) {
+  // if (children && children.length === 1 && typeof children[0] === 'string') {
+  //   text = children[0];
+  // } else
+  if (children) {
     flattenedChildren = [];
     appendChildren(selector, children, flattenedChildren);
     if (flattenedChildren.length === 0) {
